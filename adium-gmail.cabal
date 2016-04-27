@@ -56,7 +56,8 @@ test-suite adium-gmail-specs
   ghc-options:         -threaded -rtsopts
   hs-source-dirs:      specs
   main-is:             Specs.hs
-  other-modules:         AdiumGM.TypesSpec
+  other-modules:         AdiumGM.SpecsSpec
+                       , AdiumGM.TypesSpec
   build-depends:         base
                        , adium-gmail
                        , errors
