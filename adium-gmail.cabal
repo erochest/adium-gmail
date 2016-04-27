@@ -21,6 +21,8 @@ library
                      , conduit
                      , conduit-combinators
                      , conduit-extra
+                     , configurator
+                     , configurator-export
                      , errors
                      , gogol
                      , gogol-gmail
