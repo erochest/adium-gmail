@@ -6,17 +6,17 @@ license:             Apache-2.0
 license-file:        LICENSE
 author:              Eric Rochester
 maintainer:          erochest@gmail.com
--- copyright:           
+-- copyright:
 category:            Utility
 build-type:          Simple
--- extra-source-files:  
+-- extra-source-files:
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     AdiumGM.Actions.Default
+  exposed-modules:     AdiumGM.Actions.Import
                      , AdiumGM.Types
-  -- other-modules:       
-  -- other-extensions:    
+  -- other-modules:
+  -- other-extensions:
   build-depends:       base >=4.8 && <4.9
                      , conduit
                      , conduit-combinators
@@ -38,7 +38,7 @@ executable adium-gmail
   other-modules:       Actions
                      , Opts
                      , Types
-  -- other-extensions:    
+  -- other-extensions:
   build-depends:       base >=4.8 && <5
                      , adium-gmail
                      , errors
@@ -76,7 +76,7 @@ benchmark adium-gmail-bench
                        -rtsopts
   hs-source-dirs:      bench
   main-is:             Bench.hs
-  -- other-modules:         
+  -- other-modules:
   build-depends:         base
                        , adium-gmail
                        , criterion

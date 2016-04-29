@@ -9,45 +9,29 @@ module Opts
     ) where
 
 
--- import           Control.Monad       (mzero)
--- import qualified Data.List           as L
--- import qualified Data.Text           as T
 import           Options.Applicative
-
--- import           AdiumGM.Types
 
 import           Types
 
 
--- textOption :: Mod OptionFields T.Text -> Parser T.Text
--- textOption = option (T.pack <$> str)
+configOpt :: Parser FilePath
+configOpt = strOption (  short 'c' <> long "config" <> metavar "CONFIG_FILE"
+                      <> help "The file to keep configuration information in.")
 
-outputOpt :: Parser FilePath
-outputOpt = strOption (  short 'o' <> long "output" <> metavar "OUTPUT_FILE"
-                      <> help "The file to write back to.")
+importOpts :: Parser Actions
+importOpts = ImportAction <$> configOpt
 
-inputOpt :: Parser FilePath
-inputOpt = strOption (  short 'i' <> long "input" <> metavar "INPUT_FILE"
-                     <> help "The input file to process.")
-
--- inputsOpt :: Parser [FilePath]
--- inputsOpt = many (strArgument (  metavar "INPUT_FILES ..."
-                              -- <> help "Input data files."))
-
-defaultOpts :: Parser Actions
-defaultOpts = Default <$> outputOpt <*> inputOpt
-
-opts' :: Parser Actions
-opts' = subparser
-      (  command "default" (info (helper <*> defaultOpts)
-                          (progDesc "Default action and options."))
-      )
+-- opts' :: Parser Actions
+-- opts' = subparser
+--       (  command "import" (info (helper <*> importOpts)
+--                           (progDesc "Import messages from IRC DMs into GMail."))
+--       )
 
 opts :: ParserInfo Actions
-opts = info (helper <*> opts')
+opts = info (helper <*> importOpts)
             (  fullDesc
-            <> progDesc "A CLI to back up Adium DMs to GMail."
-            <> header "adium-gmail - Backs up Adium DMs to GMail.")
+            <> progDesc "A CLI to back up IRC DMs from Adium into GMail."
+            <> header "adium-gmail - Backs up IRC DMs from Adium into GMail.")
 
 parseOpts :: IO Actions
 parseOpts = execParser opts

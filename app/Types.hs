@@ -5,7 +5,7 @@ module Types where
 
 
 data Actions
-        = Default { defaultOutput :: !FilePath
-                  , defaultInput  :: !FilePath
-                  }
+        = ImportAction
+        { importConfigFile  :: !FilePath
+        }
         deriving (Show, Eq)

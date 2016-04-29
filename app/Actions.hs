@@ -8,11 +8,11 @@ module Actions where
 
 import           Control.Error
 
-import           AdiumGM.Actions.Default
+import           AdiumGM.Actions.Import
 
 import           Types
 
 
 action :: Actions -> Script ()
 
-action Default{..} = defaultAction defaultInput defaultOutput
+action ImportAction{..} = importAction importConfigFile
