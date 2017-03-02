@@ -14,19 +14,27 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     AdiumGM.Actions.Import
+                     , AdiumGM.Config
+                     , AdiumGM.Error
                      , AdiumGM.Types
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.8 && <4.9
+                     , bytestring
                      , conduit
                      , conduit-combinators
                      , conduit-extra
                      , errors
                      , gogol
                      , gogol-gmail
+                     , hoauth2
                      , lens
+                     , mtl
                      , text
                      , text-format
+                     , time
+                     , transformers
+                     , unordered-containers
                      , xml-conduit
                      , xml-types
                      , yaml

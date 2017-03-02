@@ -6,13 +6,12 @@
 module Actions where
 
 
-import           Control.Error
-
 import           AdiumGM.Actions.Import
+import           AdiumGM.Types
 
 import           Types
 
 
-action :: Actions -> Script ()
+action :: Actions -> AdiumM ()
 
 action ImportAction{..} = importAction importConfigFile

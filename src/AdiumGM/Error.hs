@@ -1,0 +1,1 @@
+module AdiumGM.Error where

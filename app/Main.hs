@@ -4,11 +4,11 @@
 module Main where
 
 
-import           Control.Error
+import           AdiumGM.Types
 
 import           Actions
 import           Opts
 
 
 main :: IO ()
-main = runScript . action =<< parseOpts
+main = runAdiumM . action =<< parseOpts

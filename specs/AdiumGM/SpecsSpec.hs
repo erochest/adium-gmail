@@ -10,8 +10,6 @@ import Test.Hspec
 spec :: Spec
 spec =
     describe "AdiumGM" $ do
-        it "should read options from the command line." $
-            pending
         it "should read options from a configuration file." $
             pending
         it "should read chats from an XML file." $

@@ -4,10 +4,8 @@
 module AdiumGM.Actions.Import where
 
 
-import           Control.Error
-
--- import           AdiumGM.Types
+import           AdiumGM.Types
 
 
-importAction :: FilePath -> Script ()
+importAction :: FilePath -> AdiumM ()
 importAction _configFile = undefined
